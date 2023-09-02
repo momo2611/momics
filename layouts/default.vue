@@ -27,18 +27,18 @@ watch(route, (route) => {
     <Navbar v-show="!isInReading" />
     <slot />
     <div :class="`fixed z-50 inset-0 bg-white flex items-center justify-center duration-300 ${isLoading
-            ? 'opacity-1  pointer-events-auto'
-            : 'opacity-0  pointer-events-none'
+        ? 'opacity-1  pointer-events-auto'
+        : 'opacity-0  pointer-events-none'
         }`">
         <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
-                    <stop offset="0%" stop-color="#22c55e" />
-                    <stop offset="100%" stop-color="#3b82f6" />
+                    <stop offset="0%" stop-color="#d9a56f" />
+                    <stop offset="100%" stop-color="#d28974" />
                 </linearGradient>
                 <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#22c55e" />
-                    <stop offset="100%" stop-color="#3b82f6" />
+                    <stop offset="0%" stop-color="#d9a56f" />
+                    <stop offset="100%" stop-color="#d28974" />
                 </linearGradient>
             </defs>
             <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke="url(#pl-grad1)" stroke-width="36"
@@ -49,8 +49,8 @@ watch(route, (route) => {
         </svg>
     </div>
     <button @click="scrollToTop" :class="`fixed p-2 bottom-6 right-6 flex items-center justify-center aspect-square rounded-full shadow bg-gray-50 -rotate-45 duration-200 sm:bottom-6 sm:right-6 ${showFloatIcon
-            ? 'opacity-1 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
+        ? 'opacity-1 pointer-events-auto'
+        : 'opacity-0 pointer-events-none'
         }`">
         <Icon name="fluent:rocket-20-regular" size="30" />
     </button>
