@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       crawlLinks: false,
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-swiper", "nuxt-security"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-swiper"],
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL,
