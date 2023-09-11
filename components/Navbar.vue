@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { routes, dynamicRoutes } from '@/utils/data';
 
+const router = useRouter();
+const user = useSupabaseUser()
+const supabase = useSupabaseClient()
+
 const device = ref<'mobile' | 'laptop'>('mobile');
 
 const searchValue = ref<string>('');
@@ -9,6 +13,16 @@ const searchInput = ref<any>(null);
 
 const showSuggest = ref<boolean>(false);
 const openSidebar = ref<boolean>(false);
+
+async function logout() {
+    try {
+        const { error } = await supabase.auth.signOut()
+        if (error) throw error
+        router.push('/login')
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 const handleSelectComic = (comicId: string) => {
     navigateTo(`/comic/${comicId}`);
@@ -119,6 +133,14 @@ onBeforeUnmount(() => {
                         </li>
                     </ul>
                 </form>
+                <div class="text-lg font-semibold">
+                    <NuxtLink v-if="user" @click="logout" to="/" class="px-4 duration-150 font-bold hover:text-[#D9A56F]">
+                        SignOut
+                    </NuxtLink>
+                    <NuxtLink v-else to="/login" class="px-4 duration-150 font-bold hover:text-[#D9A56F]">
+                        Login
+                    </NuxtLink>
+                </div>
             </div>
             <div v-else>
                 <button @click="openSidebar = true">

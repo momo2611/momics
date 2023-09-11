@@ -1,7 +1,10 @@
 <script lang="ts" setup>
+definePageMeta({
+    middleware: ['auth']
+})
 const COMICS_PER_PAGE = 30;
 const route = useRoute();
-
+const user = useSupabaseUser()
 const comics = ref<any>([]);
 const isFetching = ref<boolean>(false);
 const currentPage = ref<number>(1);

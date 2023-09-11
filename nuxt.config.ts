@@ -6,7 +6,12 @@ export default defineNuxtConfig({
       crawlLinks: false,
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-swiper"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    "nuxt-swiper",
+    "@nuxtjs/supabase",
+  ],
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL,
@@ -20,6 +25,9 @@ export default defineNuxtConfig({
       throwError: false,
     },
     hidePoweredBy: false,
+  },
+  supabase: {
+    redirect: false,
   },
   devtools: { enabled: true },
 });
