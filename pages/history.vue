@@ -26,6 +26,7 @@ const getHistoryComics = () => {
             comics.value = response;
         }
     };
+    console.log(response)
 };
 
 onMounted(() => {
