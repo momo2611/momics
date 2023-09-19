@@ -195,6 +195,10 @@ onBeforeUnmount(() => {
                                 <Icon :name="route.icon" size="20" class="mr-1" />
                                 {{ route.title }}
                             </NuxtLink>
+                            <NuxtLink to="/release" active-class="text-[#D9A56F]" @click="openSidebar = false">
+                                <Icon name="mdi:update" size="20" class="mr-1" />
+                                Anime Release
+                            </NuxtLink>
                             <NuxtLink to="/history" active-class="text-[#D9A56F]" @click="openSidebar = false">
                                 <Icon name="mdi:clock-outline" size="20" class="mr-1" />
                                 History
