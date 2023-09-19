@@ -6,7 +6,13 @@ export default defineNuxtConfig({
       crawlLinks: false,
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-swiper"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    "nuxt-swiper",
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/robots",
+  ],
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL,
@@ -20,6 +26,10 @@ export default defineNuxtConfig({
       throwError: false,
     },
     hidePoweredBy: false,
+  },
+  routeRules: {
+    "/api/anime/**": { isr: 60 * 15 },
+    "/api/anime": { redirect: "/api/anime/0" },
   },
   devtools: { enabled: true },
 });

@@ -9,6 +9,7 @@ export const routes: Route[] = [
   { name: "Genres", path: "/genres?type=all" },
   { name: "New", path: "/new" },
   { name: "Top", path: "/top?tab=all" },
+  { name: "Anime Release", path: "/release" },
 ];
 
 type TopRoute = {
