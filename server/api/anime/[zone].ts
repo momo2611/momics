@@ -30,6 +30,7 @@ query (
             coverImage {
                 large
             }
+            siteUrl
         }
     }
 }

@@ -32,12 +32,19 @@ const airing = computed<string>(() => {
     date.setUTCSeconds(props.anime.nextAiringEpisode.airingAt);
     return date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
 });
+
+const openInfoAnime = () => {
+    const url = props.anime.siteUrl
+    window.open(url, '_blank')
+
+}
 </script>
 
 <template>
     <li>
         <div ref="target">
-            <div class="w-full rounded-lg overflow-hidden aspect-[5/7] bg-dark2 relative">
+            <div @click="openInfoAnime"
+                class="hover:cursor-pointer w-full rounded-lg overflow-hidden aspect-[5/7] bg-dark2 relative">
                 <div class="absolute top-0 left-0 right-0 z-10 flex justify-between p-2">
                     <AniAnimeItemBadge class="bg-[#d9a56f]/70">
                         {{ airing }}
@@ -45,7 +52,7 @@ const airing = computed<string>(() => {
                     <AniAnimeItemBadge class="bg-[#d9a56f]/70">Ep {{ anime.nextAiringEpisode.episode }}</AniAnimeItemBadge>
                 </div>
 
-                <img class="object-cover w-full h-full transition duration-300"
+                <img class="object-cover w-full h-full transition duration-300 hover:scale-105"
                     :class="[imgLoaded ? 'opacity-100 blur-none' : 'opacity-0 blur']" ref="img" />
             </div>
             <h4 class="mt-2 md:mt-4 text-sm font-bold opacity-60 two-lines">{{ anime.title.romaji }}</h4>
