@@ -46,3 +46,12 @@ export type Genre = {
   id: string;
   description?: string;
 };
+
+export type News = {
+  id: number;
+  title: string;
+  updateAt?: string;
+  updateBy?: string;
+  link: string;
+  cover: string;
+};
