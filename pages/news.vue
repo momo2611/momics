@@ -19,8 +19,8 @@ const data = ref([])
 
 const fetchData = async () => {
   try {
-    // const response = await fetch(`${url}/daily-news`);
-    const response = await fetch(`http://localhost:8081/daily-news`);
+    const response = await fetch(`${url}/daily-news`);
+    // const response = await fetch(`http://localhost:8081/daily-news`);
     if (response.ok) {
       const apiData = await response.json();
       data.value = apiData;
