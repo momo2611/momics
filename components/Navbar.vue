@@ -199,6 +199,10 @@ onBeforeUnmount(() => {
                                 <Icon name="mdi:update" size="20" class="mr-1" />
                                 Anime Release
                             </NuxtLink>
+                            <NuxtLink to="/news" active-class="text-[#D9A56F]" @click="openSidebar = false">
+                                <Icon name="mdi:newspaper" size="20" class="mr-1" />
+                                News
+                            </NuxtLink>
                             <NuxtLink to="/history" active-class="text-[#D9A56F]" @click="openSidebar = false">
                                 <Icon name="mdi:clock-outline" size="20" class="mr-1" />
                                 History
