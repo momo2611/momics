@@ -102,7 +102,7 @@ const handleDownloadChapters = async () => {
 };
 
 onMounted(() => {
-    const { clientHeight, scrollHeight } = description.value;
+    const { clientHeight, scrollHeight } = description?.value;
     isTooLongDescription.value = clientHeight < scrollHeight;
 });
 
@@ -202,6 +202,11 @@ useServerSeoMeta(
                         @click="showFullDescription = !showFullDescription">
                         {{ showFullDescription ? 'Show less' : 'Show more' }}
                     </button>
+                </div>
+                <div class="mt-2" v-else>
+                    <p ref="description">
+                        No description
+                    </p>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center gap-3 mt-5 font-bold">
                     <button @click="() => {

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@vueuse/motion/nuxt",
     "@nuxtjs/robots",
+    "@vite-pwa/nuxt",
   ],
   runtimeConfig: {
     public: {
@@ -31,5 +32,34 @@ export default defineNuxtConfig({
     "/api/anime/**": { isr: 60 * 15 },
     "/api/anime": { redirect: "/api/anime/0" },
   },
-  devtools: { enabled: true },
+  pwa: {
+    manifest: {
+      name: "Momics | Read comics online",
+      short_name: "Momics",
+      description: "Read comics online",
+      lang: "en",
+      icons: [
+        {
+          src: "icons/64x64.png",
+          sizes: "64x64",
+          type: "image/png",
+        },
+        {
+          src: "icons/144x144.png",
+          sizes: "144x144",
+          type: "image/png",
+        },
+        {
+          src: "icons/192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "icons/512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
+    },
+  },
 });

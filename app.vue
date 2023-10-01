@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator color="#8A8372" />
+    <VitePwaManifest />
     <NuxtPage />
     <NuxtErrorBoundary />
   </NuxtLayout>
