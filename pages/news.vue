@@ -14,7 +14,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
-const url = config.public.baseURL
+const url = config.public.newsURL
 const data = ref([])
 
 const fetchData = async () => {

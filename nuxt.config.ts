@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL,
+      newsURL: process.env.NEWS_URL,
     },
   },
   security: {
